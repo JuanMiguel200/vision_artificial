@@ -4,7 +4,7 @@ from mediapipe.tasks.python import vision
 import cv2
 
 # Cargar imagen con OpenCV
-image_path = 'image/victory.jpg'
+image_path = 'mediapipe/image/victory.jpg'
 image = cv2.imread(image_path)
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
@@ -20,7 +20,7 @@ VisionRunningMode = mp.tasks.vision.RunningMode
 
 # Create a gesture recognizer instance with the image mode:
 options = GestureRecognizerOptions(
-    base_options=BaseOptions(model_asset_path='model/gesture_recognizer.task'),
+    base_options=BaseOptions(model_asset_path='mediapipe/model/gesture_recognizer.task'),
     running_mode=VisionRunningMode.IMAGE)
 with GestureRecognizer.create_from_options(options) as recognizer:
     result = recognizer.recognize(mp_image)
